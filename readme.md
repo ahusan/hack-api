@@ -67,7 +67,7 @@
 ### 7. Setting up migrations 
 `alembic init alembic`
 
-### 8. Cahnge alembic/env.py to include
+### 8. Change alembic/env.py to include
 ```python
 
 config.set_main_option('sqlalchemy.url', os.environ['DATABASE_URL'])
