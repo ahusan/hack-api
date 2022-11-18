@@ -7,9 +7,9 @@
 - Alternatively you can add all the services under docker with these
 
 ```yml
-    version: "3"
+version: "3"
 
-    services:
+services:
 
     #Postgres DB service
     db:
@@ -21,7 +21,7 @@
         - POSTGRES_PASSWORD=postgres
         - POSTGRES_DB=test_db
 
-    
+
     #running app on docker
     web:
         build: .
@@ -32,7 +32,7 @@
         - "8000:8000"
         depends_on:
         - db
-    
+
     #If you want a webUI to view db
     pgadmin:
         container_name: pgadmin
