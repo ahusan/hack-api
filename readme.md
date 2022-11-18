@@ -48,26 +48,27 @@ services:
 
 - After adding this to docker-compose.yml you can run
 
-`docker compose up`
+`docker compose up -d`
 
 - If you have alredy done so and made changes, you can run
 
-`docker compose up`
+`docker compose build`
+`docker compose up -d --remove-orphans`
 
 
-### 4. To create a virtual python environment run the command below 
+### 2. To create a virtual python environment run the command below 
 `python -m venv env`
 
-### 5. To activate virtual python environment 
+### 3. To activate virtual python environment 
 `./env/Scripts/activate`
 
-### 6. To install all the required packages 
+### 4. To install all the required packages 
 `pip install -r "requirement.txt"`
 
-### 7. Setting up migrations 
+### 5. Setting up migrations 
 `alembic init alembic`
 
-### 8. Change alembic/env.py to include
+### 6. Change alembic/env.py to include
 ```python
 
 config.set_main_option('sqlalchemy.url', os.environ['DATABASE_URL'])
@@ -76,11 +77,11 @@ target_metadata = models.Base.metadata
 
 ```
 
-### 8. Create new migrations 
+### 7. Create new migrations 
 `alembic revision -m "New Migration"`
 
-### 9. Update DB to the new migration 
+### 8. Update DB to the new migration 
 `alembic upgrade head`
 
-### 10. To run the app 
+### 9. To run the app 
 `uvicorn main:app --reload`
