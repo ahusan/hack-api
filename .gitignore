@@ -2,3 +2,5 @@
 /env
 .env
 alembic/__pycache__/env.cpython-310.pyc
+
+/alembic
